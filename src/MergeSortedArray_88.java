@@ -1,7 +1,8 @@
 import java.util.Arrays;
 /*
  * Time Taken:
- * Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+ * Input: nums1 = [1,2,3,0,0,0], m = 3,
+ *        nums2 = [2,5,6], n = 3
  *                      i      k                     j
  * Output: [1,2,2,3,5,6]
  *
@@ -9,7 +10,7 @@ import java.util.Arrays;
  * Space: O(1)
  *
  * */
-public class MergeSortedArray {
+public class MergeSortedArray_88 {
     public static void merge(int[] a, int m, int[] b, int n) {
         int i = m-1, k = m+n-1, j = n-1;
         while (k >= 0 && j >= 0 && i >=0){
