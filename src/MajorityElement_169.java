@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class MajorityElement_169 {
 /*
 * Input: nums = [2,2,1,1,1,2,2]
