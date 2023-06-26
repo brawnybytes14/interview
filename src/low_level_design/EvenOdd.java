@@ -3,14 +3,13 @@ package low_level_design;
 class Main {
     public static void main(String[] args){
         EvenOdd eo = new EvenOdd();
-        Thread t1 = new Thread(() -> {
-            eo.printEvenNumber();
-        });
-        Thread t2 = new Thread(() -> {
-            eo.printOddNumber();
-        });
+
+        Thread t1 = new Thread(eo::printEvenNumber);
+        Thread t2 = new Thread(eo::printOddNumber);
+
         t1.setName("Even: ");
         t2.setName("Odd: ");
+
         t1.start();
         t2.start();
     }
@@ -29,7 +28,7 @@ class EvenOdd {
                     System.out.println(Thread.currentThread().getName() + index);
                     index++;
                     notify();
-                } catch (Exception e){
+                } catch (Exception ignored){
                 }
             }
         }
@@ -46,7 +45,7 @@ class EvenOdd {
                     System.out.println(Thread.currentThread().getName() + index);
                     index++;
                     notify();
-                } catch (Exception e){
+                } catch (Exception ignored){
                 }
             }
         }
